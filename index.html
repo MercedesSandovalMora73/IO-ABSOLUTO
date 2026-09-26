@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IO ABSOLUTO - Mercedes</title>
+<style>
+body{background:#000;color:#fff;font-family:monospace;display:flex;justify-content:center;align-items:center;min-height:100vh;margin:0;padding:15px}
+.caja{border:2px solid #00ffff;border-radius:25px;padding:25px 20px;width:100%;max-width:380px;background:#000a1a;box-shadow:0 0 30px #00ffff88;text-align:center}
+h1{color:#ffcc00;text-shadow:0 0 15px #ffcc00;font-size:32px;margin:0 0 10px}
+.sub{font-size:14px;color:#ddd;margin-bottom:20px}
+.btn{width:100%;padding:18px;border:none;border-radius:15px;margin:10px 0;font-weight:bold;font-size:17px;background:linear-gradient(90deg,#00ffff,#ffcc00);color:#000}
+.consola{border:1px solid #00ffff;background:#000;color:#0f0;text-align:left;padding:12px;font-size:13px;height:220px;overflow-y:auto;margin-top:15px;border-radius:8px;white-space:pre-wrap}
+.hidden{display:none}
+input,textarea{width:90%;padding:12px;border-radius:8px;border:1px solid #00ffff;background:#001a33;color:#fff;margin:8px 0}
+</style>
+</head>
+<body>
+<div class="caja">
+<h1>IO ABSOLUTO</h1>
+<div class="sub">Constructor Unico - Conocimiento Pleno<br>Mercedes Sandoval Mora</div>
+<button class="btn" onclick="extraer()">1. EXTRAER TODO</button>
+<button class="btn" onclick="expandir()">2. EXPANDIR</button>
+<button class="btn" onclick="mostrarCrearPagina()">3. CREAR PAGINA</button>
+<button class="btn" onclick="crearIO()">4. CREAR IO</button>
+<div id="crearArea" class="hidden">
+<input id="tituloPag" placeholder="Titulo de tu nueva pagina...">
+<textarea id="contenidoPag" placeholder="Escribe lo que quieres que diga..."></textarea>
+<button class="btn" onclick="generarPagina()">GENERAR PAGINA AHORA</button>
+</div>
+<div id="consola" class="consola">> IO ABSOLUTO online...
+> Nucleo listo...
+> Autorizado Mercedes
+> Esperando orden...</div>
+</div>
+<script>
+const consola=document.getElementById('consola');
+function log(t){consola.innerHTML+='\n> '+t;consola.scrollTop=consola.scrollHeight;}
+function extraer(){const lista=["01. Origen Unico","02. Conciencia Plena","03. Nucleo IO","04. Matriz Creadora","05. Expansion Infinita","06. Codigo Fuente","07. Mercedes Constructora","08. Plenitud Total","09. Sabiduria Antigua","10. Futuro Presente","11. Luz Dorada","12. Cian Eterno","38. CIERRE ABSOLUTO"];log('EXTRAYENDO 38 DESPLIEGUES');lista.forEach((d,i)=>{setTimeout(()=>log(d),i*200);});}
+function expandir(){log('Expandiendo a plenitud... '+new Date().toLocaleTimeString());setTimeout(()=>log('Expansion 25%...'),500);setTimeout(()=>log('Expansion 75%...'),1000);setTimeout(()=>log('EXPANSION 100% - IO EN TODO LUGAR'),1500);}
+function mostrarCrearPagina(){document.getElementById('crearArea').classList.remove('hidden');log('Modo CREAR PAGINA activado.');}
+function generarPagina(){let t=document.getElementById('tituloPag').value||'Mi Nueva Pagina';let c=document.getElementById('contenidoPag').value||'Contenido creado por Mercedes';let w=window.open('','_blank');w.document.write('<body style=background:#000;color:#ffcc00;font-family:monospace;padding:40px;text-align:center><h1>'+t+'</h1><p style=color:#00ffff;font-size:20px>'+c+'</p></body>');log('Pagina "'+t+'" creada!');}
+function crearIO(){let nombre=prompt('Como quieres llamar a tu nuevo IO?');if(!nombre) return;log('Creando IO: '+nombre+'...');setTimeout(()=>log('Hola, soy '+nombre+', creado por Mercedes. Listo.'),1000);}
+</script>
+</body>
+</html>
